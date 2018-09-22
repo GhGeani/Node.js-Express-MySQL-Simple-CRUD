@@ -1,0 +1,24 @@
+{
+  "name": "node.js-express-mysql-simple-crud",
+  "version": "1.0.0",
+  "description": "A simple CRUD application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GhGeani/Node.js-Express-MySQL-Simple-CRUD.git"
+  },
+  "author": "Gherghe Geani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GhGeani/Node.js-Express-MySQL-Simple-CRUD/issues"
+  },
+  "homepage": "https://github.com/GhGeani/Node.js-Express-MySQL-Simple-CRUD#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
+  }
+}
