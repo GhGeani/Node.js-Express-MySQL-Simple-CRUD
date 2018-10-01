@@ -1,0 +1,32 @@
+<% include layouts/header.ejs %>
+    <div class="container">
+        <div class="row">
+                <% if(data.length == 0) { %>
+                        <h4 class= 'font-weight-light text-muted font-italic'> The list it's empty right now.</h4>
+                        <% } %>
+                <% for(var i = 0; i < data.length; i++) { %>
+                
+                        <div class="col-md-6 col-lg-4">
+                        <div class= "card">
+                            <img src="<%= data[i].photop %>" alt='Profile image not found' class= "card-img-top img-fluid">
+                            <div class= "card-block">
+                              <div class= "card-title text-center pt-3 h4"> <%= data[i].first_name %>  <%= data[i].second_name %></div>
+                              <div class= "card-subtitle mb-2 text-muted text-center"><%= data[i].email %></div>
+                              <p class= "card-text font-weight-light font-italic ml-2"><%= data[i].bio %></p>
+                              <nav class="navbar navbar-light bg-faded">
+                                  <div class="inline">
+                                      <a href= "/delete/<%= data[i].id %>">
+                                        <button class="btn btn-outline-danger" type="button" >Delete</button>
+                                      </a>
+                                     <a href= "/edit/<%= data[i].id %>">
+                                        <button class="btn btn-sm align-middle btn-outline-secondary" type="button" >Edit profile</button>
+                                     </a>
+                                  </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+        </div>
+    </div>
+<% include layouts/footer.ejs %>

@@ -1,0 +1,34 @@
+<% include layouts/header.ejs %>
+
+    <div class="container justify-content-center">
+        <form method="POST">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" name= "email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="first_name">First name</label>
+              <input type="text" name= "first_name" class="form-control" id="first_name" placeholder="First name">
+            </div>
+            <div class="form-group">
+                <label for="second_name">Second name</label>
+                <input type="text" name= "second_name" class="form-control" id="second_name" placeholder="Second name">
+              </div>
+            
+            <div class="form-group">
+              <label for="bio">Bio</label>
+              <textarea class="form-control" name="bio" id="bio" rows="3"></textarea>
+              <small id="textareaHelp" class="form-text text-muted">Tell us more about you! Your hobbies, skills, etc..</small>
+            </div>
+            <!-- <div class="form-group">
+              <label for="image">Image input</label>
+              <input type="file" class="form-control-file" id="image" aria-describedby="fileHelp">
+              <small id="fileHelp" class="form-text text-muted">Please select an image wich will represent you.</small>
+            </div> -->
+            
+            <button type="submit" class="btn btn-secondary mt-2 mb-4">Submit</button>
+          </form>
+    </div>
+
+<% include layouts/footer.ejs %>
