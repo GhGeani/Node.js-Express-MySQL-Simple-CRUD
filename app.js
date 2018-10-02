@@ -3,6 +3,10 @@ const express           = require('express');               //
 const mysql             = require('mysql');                 //
 const bodyParser        = require('body-parser');           //
 const connection        = require('express-myconnection');  //
+const expressValidator  = require('express-validator');     //  
+const session           = require('express-session');       //
+const flash             = require('express-flash');         //
+const cookieParser      = require('cookie-parser');         //
     //_______________________________________________________
 
 const app               = express();
@@ -26,7 +30,17 @@ app.set('view engine', 'ejs');
     // ..middlewares.. //
 app.use(connection(mysql,dbCfg, 'single'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
 app.use(express.static('./public'));
+app.use(expressValidator());
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }));
+app.use(cookieParser());
+app.use(flash());
 app.use('/', routes);
 
     // ..starting the server.. //
