@@ -8,7 +8,7 @@ $(document).ready(function(){
         }
     });
 
-    $('#delBtn').on('click', function(evt){
+    $('.delBtn').on('click', function(evt){
         //evt.preventDefault();
         if(confirm('This profile will be deleted...')){
             //$(this).unbind('click');

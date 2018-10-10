@@ -5,10 +5,13 @@
                         <h4 class= 'font-weight-light text-muted font-italic'> The list it's empty right now.</h4>
                         <% } %>
                 <% for(var i = 0; i < data.length; i++) { %>
-                
                         <div class="col-md-6 col-lg-4">
                         <div class= "card">
-                            <img src="<%= data[i].photop %>" alt='Profile image not found' class= "card-img-top img-fluid">
+                            <% if (data[i].photo != undefined){ %>
+                                <img src= '/uploads/<%= data[i].photo_name %>' alt= "Porfile image not found " class= "card-img-top img-fluid">
+                           <% } else { %>
+                            <img src= '' alt= "Porfile image not found " class= "card-img-top img-fluid">
+                            <% } %>
                             <div class= "card-block">
                               <div class= "card-title text-center pt-3 h4"> <%= data[i].first_name %>  <%= data[i].second_name %></div>
                               <div class= "card-subtitle mb-2 text-muted text-center"><%= data[i].email %></div>
@@ -16,7 +19,7 @@
                               <nav class="navbar navbar-light bg-faded">
                                   <div class="inline">
                                       <a href= "/delete/<%= data[i].id %>">
-                                        <button class="btn btn-outline-danger" type="button" id="delBtn" >Delete</button>
+                                        <button class="btn btn-outline-danger delBtn" type="button">Delete</button>
                                       </a>
                                      <a href= "/edit/<%= data[i].id %>">
                                         <button class="btn btn-sm align-middle btn-outline-secondary" type="button" >Edit profile</button>
