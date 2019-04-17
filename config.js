@@ -2,7 +2,7 @@ const config = {
     database: {
         host:       'localhost',
         user:       'root',
-        password:   '',
+        password:   'password',
         port:       3306,
         database:   'crud_db'
     },
